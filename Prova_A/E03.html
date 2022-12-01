@@ -9,10 +9,39 @@
 
     //Entrada
 
+    alert("Estamos em período de eleições por aqui! Representates se preparem!!!");
+    votosChapa1 = 0;
+    votosChapa2 = 0;
+    let votos = 0;
+    let resultadoNaTela;
+    let porcentagemChapa1 = 0;
+    let porcentagemChapa2 = 0;
 
     //Processamento
 
+    for (let controle = 1; controle <= 14; controle++) {
+        votos = parseInt(prompt("Diga qual chapa, representante "+controle+", você deseja votar: Chapa 1 ou Chapa 2 (VOTE APENAS COM O NÚMERO!)").trim());
+        if (votos === 1) {
+            votosChapa1 = votosChapa1 + 1;
+        } else if (votos === 2) {
+            votosChapa2 = votosChapa2 + 1;
+        }
+
+    }
+    if (votosChapa1 > votosChapa2) {
+        resultadoNaTela = "A chapa ganhadora foi a chapa 1! Com "+votosChapa1+" votos."
+    } else if(votosChapa2 > votosChapa1) {
+        resultadoNaTela = "A chapa ganhadora foi a chapa 2! Com "+votosChapa2+" votos."
+    }
+
+    porcentagemChapa1 = 100*(votosChapa1/14);
+    porcentagemChapa2 = 100*(votosChapa2/14);
+
 
     //Saída
+
+    document.write(resultadoNaTela+"</br>");
+    document.write("A porcentagem de votos da chapa 1 foi: "+porcentagemChapa1.toFixed(2)+"% </br>");
+    document.write("A porcentagem de votos da chapa 2 foi: "+porcentagemChapa2.toFixed(2)+"%");
 
 </script>

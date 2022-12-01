@@ -6,4 +6,29 @@
     Peça para o usuário informar a quantia inicial investida e quanto tempo pretende deixar guardado.
     Apresente o valor final previsto que terá investido e a porcentagem que acresceu, comparado com a quantia inicial que foi investida.
     */
+
+   //ENTRADA
+
+   let quantiaInvestida = Number(prompt("Diga qual a quantida que você deseja investir: ").replace(",",".").trim());
+   let tempo = parseInt(prompt("Diga quantos meses pretende dixar esse dinheiro investindo: ").trim());
+   anos = 0;
+   let quantinicial = quantiaInvestida;
+   let quantFinal;
+
+   //PROCESSAMENTO
+
+   for (let controle = 1; controle <= tempo; controle++) {
+    quantFinal = (quantiaInvestida * (0.01*tempo)+quantiaInvestida);
+    
+   
+   }
+
+   let porcentagem = 100 / (quantinicial*quantFinal);
+
+   //SAÍDA
+
+   document.write("O valor previsto para o final do investimento é de R$"+quantFinal.toFixed(2)+" e a porcentagem de aumento foi de "+porcentagem.toFixed(2)+"%.");
+
+   //consegui (eu acho) fazer só o investimento por mês :(
+
 </script>

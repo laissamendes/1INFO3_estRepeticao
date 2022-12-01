@@ -8,10 +8,34 @@
 
     //Entrada
 
+    const quantAlunos = 10;
+    let notas = [];
+    let nota = 0;
+    let notasMaior6 = [];
+    let notasMenor6 = [];
+    let somaMaiores = 0;
+    let somaMenores = 0;
 
     //Processamento
 
+    for (let controle = 1; controle <= quantAlunos; controle++){
+       nota = Number(prompt("Que nota o aluno " +controle+ " tirou?").trim());
+       notas.push(nota);
+       if (nota >= 6) {
+        somaMaiores = somaMaiores + nota;
+        notasMaior6.push(nota);
+       } else if (nota < 6) {
+        somaMenores = somaMenores + nota;
+        notasMenor6.push(nota)
+       }
+    }
+    let mediaMaiores = somaMaiores / (notasMaior6.length);
+    let mediaMenores = somaMenores / (notasMenor6.length);
 
     //Saída
+
+    document.write("As notas foram: " + notas.join(", ") + "</br>");
+    document.write("Tiveram: " + notasMaior6.length + " maiores ou iguais a 6, e a média disso foi: "+mediaMaiores.toFixed(2)+"</br>");
+    document.write("E tiveram: "+notasMenor6.length+" menores que 6, e a média delas foi: " + mediaMenores.toFixed(2));
 
 </script>

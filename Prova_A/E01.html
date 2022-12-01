@@ -11,10 +11,28 @@
 
     //Entrada
 
+    const cidadaos = 15;
+    let notas = [];
+    let nota = 0;
+    let quantMaior9 = [];
+    let soma = 0;
 
     //Processamento
 
+    for (let controle = 1; controle <= cidadaos; controle++) {
+        nota = Number(prompt("Olá cidadão " + controle + " , qual a sua nota para a decoração de natal deste ano? (entre 1 e 10)").replace(",", "."));
+        soma = soma + nota;
+        notas.push(nota);
+        if (nota >= 9) {
+            quantMaior9.push(notas);
+        }
+    }
+    let media = soma / (notas.length);
 
     //Saída
+
+    document.write("As notas foram: " + notas.join(", ") + "</br>");
+    document.write("Total de moradores que deram nota maior ou igual a nove: " + quantMaior9.length + "</br>");
+    document.write("A média de notas foi: " + media.toFixed(2));
 
 </script>

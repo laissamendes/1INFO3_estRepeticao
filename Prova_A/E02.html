@@ -10,10 +10,26 @@
 
     //Entrada
 
+    const quantFuncionarios = parseInt(prompt("Olá empresa! Me diga quantos funcionários você tem:"));
+    let listaDeLitros = [];
+    let litrosPorFun = 0;
+    let soma = 0;
+
 
     //Processamento
 
+    for (let controle = 1; controle <= quantFuncionarios; controle++) {
+       litrosPorFun = Number(prompt("Olá querido funcionário! Me dia quantos litros de água você consume por dia:").replace(",","."));
+       listaDeLitros.push(litrosPorFun);
+       soma = soma + litrosPorFun;
+    }
+
+    let media = soma / (listaDeLitros.length);
 
     //Saída
+
+    document.write("A sua empresa tem: "+quantFuncionarios+" Funcionários </br>");
+    document.write("Em média cada um deles consume "+media.toFixed(1)+"L de água por dia </br>");
+    document.write("E a soma total de litros de todos eles é de "+soma);
 
 </script>
